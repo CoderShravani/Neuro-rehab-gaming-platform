@@ -13,7 +13,11 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       console.log("User logged in:", userCredential.user);
       navigate("/"); // Redirect to homepage after login
     } catch (error) {
@@ -52,12 +56,16 @@ function Login() {
             />
           </div>
 
-          <button type="submit" className="login-button">Login</button>
+          <button type="submit" className="login-button">
+            Login
+          </button>
         </form>
 
         <p className="signup-text">
           Don't have an account?{" "}
-          <a href="/signup" className="signup-link">Signup here</a>
+          <a href="/signup" className="signup-link">
+            Signup here
+          </a>
         </p>
       </div>
     </div>

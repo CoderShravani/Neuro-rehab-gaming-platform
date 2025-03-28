@@ -1,33 +1,37 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "./firebase"; // Import Firestore database
-import { doc, setDoc } from "firebase/firestore"; // Firestore functions
+import { auth, db } from "./firebase";
+import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import "../styles/Signup.css"; // Ensure CSS file exists
+import "../styles/Signup.css";
+
+const feelings = ["Happy", "Sad", "Anxious", "Excited"];
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [selectedFeeling, setSelectedFeeling] = useState(null);
   const navigate = useNavigate();
 
-  // Function to handle signup
   const handleSignup = async (e) => {
     e.preventDefault();
-    setError(""); // Reset errors before signup attempt
+    setError("");
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user; // Firebase user object
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
 
-      // Store user data in Firestore
       await setDoc(doc(db, "users", user.uid), {
-        email: user.email, // Store user email
-        uid: user.uid, // Store UID
-        createdAt: new Date() // Store account creation time
+        email: user.email,
+        uid: user.uid,
+        createdAt: new Date(),
       });
 
-      // Redirect to medical form page after signup
       navigate("/medical-form");
     } catch (error) {
       setError(error.message || "Failed to create an account. Try again.");
@@ -39,7 +43,7 @@ const Signup = () => {
       <div className="signup-box">
         <h2 className="signup-title">Signup</h2>
         {error && <p className="error-message">{error}</p>}
-        
+
         <form onSubmit={handleSignup} className="signup-form">
           <div className="input-group">
             <label>Email</label>
@@ -63,12 +67,16 @@ const Signup = () => {
             />
           </div>
 
-          <button type="submit" className="signup-button">Signup</button>
+          <button type="submit" className="signup-button">
+            Signup
+          </button>
         </form>
 
         <p className="login-text">
           Already have an account?{" "}
-          <a href="/login" className="login-link">Login here</a>
+          <a href="/login" className="login-link">
+            Login here
+          </a>
         </p>
       </div>
     </div>
