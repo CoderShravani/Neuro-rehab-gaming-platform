@@ -1,0 +1,94 @@
+body {
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  .questionnaire-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .questionnaire-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .questionnaire-form label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #444;
+    display: block;
+  }
+  
+  .questionnaire-form div {
+    margin-bottom: 15px;
+  }
+  
+  .questionnaire-form input[type="radio"],
+  .questionnaire-form input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .questionnaire-form select,
+  .questionnaire-form input[type="text"],
+  .questionnaire-form input[type="email"],
+  .questionnaire-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .questionnaire-container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .questionnaire-form label {
+      font-size: 14px;
+    }
+  
+    .questionnaire-form input,
+    .questionnaire-form select {
+      font-size: 13px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
