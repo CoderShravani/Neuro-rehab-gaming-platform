@@ -78,13 +78,15 @@ const Questionnaire = () => {
       onSubmit={handleSubmit}
       className="p-6 max-w-lg mx-auto bg-white shadow-md rounded-lg"
     >
+
       <h2 className="text-xl font-bold mb-4">General Patient Information</h2>
       <Question
         label="1. What is your age group?"
         name="ageGroup"
         options={["18-30", "31-50", "51-65", "65+"]}
         handleChange={handleChange}
-      />
+      /> 
+
       <Question
         label="2. What condition are you recovering from?"
         name="condition"
@@ -97,6 +99,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="3. How long has it been since your diagnosis/injury?"
         name="diagnosisTime"
@@ -107,7 +110,8 @@ const Questionnaire = () => {
           "More than 2 years",
         ]}
         handleChange={handleChange}
-      />
+      /> 
+
       <Question
         label="4. Are you currently undergoing therapy or rehabilitation?"
         name="therapyStatus"
@@ -127,6 +131,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="6. How much control do you have over your hand movements?"
         name="handControl"
@@ -138,6 +143,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="7. Can you walk without assistance?"
         name="walkAbility"
@@ -149,6 +155,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="8. Do you experience muscle stiffness or spasms?"
         name="muscleSpasms"
@@ -163,6 +170,7 @@ const Questionnaire = () => {
         options={["Never", "Sometimes", "Often", "Always"]}
         handleChange={handleChange}
       />
+
       <Question
         label="10. Do you have trouble focusing on a task for a long time?"
         name="focus"
@@ -174,6 +182,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="11. Do you find it difficult to solve problems or make decisions?"
         name="problemSolving"
@@ -185,7 +194,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
-
+                                                                                                                                                        
       <h2 className="text-xl font-bold mt-4">Emotional and Mental Health</h2>
       <Question
         label="12. How often do you feel frustrated or anxious about your recovery?"
@@ -193,6 +202,7 @@ const Questionnaire = () => {
         options={["Never", "Sometimes", "Often", "Always"]}
         handleChange={handleChange}
       />
+
       <Question
         label="13. Do you feel motivated to complete therapy exercises?"
         name="motivation"
@@ -204,6 +214,7 @@ const Questionnaire = () => {
         ]}
         handleChange={handleChange}
       />
+
       <Question
         label="14. Do you feel socially isolated due to your condition?"
         name="socialIsolation"
@@ -223,6 +234,7 @@ const Questionnaire = () => {
         options={["No pain", "Mild pain", "Moderate pain", "Severe pain"]}
         handleChange={handleChange}
       />
+
       <Question
         label="16. How would you rate your balance and coordination?"
         name="balance"
@@ -266,7 +278,6 @@ const Questionnaire = () => {
         handleChange={handleChange}
         />
        
-      
       <Question
         label="20. Would you like to receive progress reports?"
         name="progressReports"

@@ -42,11 +42,11 @@ function App() {
       {/* First-time Signup Flow */}
       <Route
         path="/medical-form"
-        element={isFirstTimeUser ? <MedicalForm /> : <Navigate to="/" />}
+        element={!isFirstTimeUser ? <MedicalForm /> : <Navigate to="/" />}
       />
       <Route
         path="/questionnaire"
-        element={isFirstTimeUser ? <Questionnaire /> : <Navigate to="/" />}
+        element={!isFirstTimeUser ? <Questionnaire /> : <Navigate to="/" />}
       />
 
       {/* Quick Links Routes */}
