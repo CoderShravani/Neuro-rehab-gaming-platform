@@ -99,3 +99,23 @@
 .signup-btn:hover {
   background-color: #047857;
 }
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}

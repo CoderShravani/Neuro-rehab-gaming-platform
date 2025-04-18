@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth } from "./firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import "../styles/Login.css"; // Ensure this file exists
+import "../styles/Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,13 +13,17 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("User logged in:", userCredential.user);
-      navigate("/"); // Redirect to homepage after login
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Save user info to localStorage
+      localStorage.setItem("user", JSON.stringify({
+        uid: user.uid,
+        email: user.email,
+      }));
+
+      console.log("User logged in:", user);
+      navigate("/"); // Redirect to homepage
     } catch (error) {
       console.error("Login Error:", error.message);
       setError("Invalid credentials. Please check your email and password.");

@@ -5,13 +5,12 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
 
-const feelings = ["Happy", "Sad", "Anxious", "Excited"];
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [selectedFeeling, setSelectedFeeling] = useState(null);
+  
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
@@ -26,12 +25,20 @@ const Signup = () => {
       );
       const user = userCredential.user;
 
+      // Save user to Firestore
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
         uid: user.uid,
         createdAt: new Date(),
       });
 
+      // Save user info to localStorage
+      localStorage.setItem("user", JSON.stringify({
+        uid: user.uid,
+        email: user.email,
+      }));
+
+      // Navigate to medical form after signup
       navigate("/medical-form");
     } catch (error) {
       setError(error.message || "Failed to create an account. Try again.");

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
-import RecoverySection from "./header/RecoverySection";
-import JourneySection from "./header/JourneySection";
 import SuccessStories from "./Swiper/Swiper";
 import Footer from "./Footer/Footer";
+
 
 const Home = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const [selectedMood, setSelectedMood] = useState(null);
+  console.log("User:", user);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -38,60 +38,51 @@ const Home = () => {
       {/* Header Section */}
       <header className="header">
         <div className="header-decoration"></div>
-        <div className="header-content">
-          <div className="header-left">
-            <div className="logo-container">
-              <div className="logo-pulse"></div>
-              <img src="/addimage/logo.png" alt="Logo" className="logo" />
-            </div>
-            <div className="header-text">
-              <h1 className="main-title">
-                <span className="gradient-text">
-                  Welcome to Your Healing Space
-                </span>
-              </h1>
-              <div className="tagline">
-                <span className="animated-text">PLAY</span>
-                <span className="separator">|</span>
-                <span className="animated-text">HEAL</span>
-                <span className="separator">|</span>
-                <span className="animated-text">THRIVE</span>
-              </div>
-            </div>
-          </div>
-          <div className="header-right">
-            <button className="notification-button">
-              <div className="notification-dot"></div>
-              <span className="notification-icon">🔔</span>
-            </button>
-            <div className="auth-buttons">
-              {user ? (
-                <>
-                  <span className="user-name">Welcome, {user.name}</span>
-                  <button className="btn btn-primary" onClick={handleLogout}>
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => navigate("/login")}
-                  >
-                    Login
-                  </button>
-                  <button
-                    className="btn btn-success"
-                    onClick={() => navigate("/signup")}
-                  >
-                    Sign Up
-                  </button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
+       <div className="header-content">
+  <div className="header-left">
+    <div className="logo-container">
+      <div className="logo-pulse"></div>
+      <img src="/addimage/logo.png" alt="Logo" className="logo" />
+    </div>
+    
+
+    {/* Only show navigation if user is logged in */}
+    
+      <nav className="nav-links">
+        <button onClick={() => navigate("/about")} className="nav-link">About Us</button>
+        <button onClick={() => navigate("/services")} className="nav-link">Our Services</button>
+        <button onClick={() => navigate("/programs")} className="nav-link">Treatment Programs</button>
+        <button onClick={() => navigate("/contact")} className="nav-link">Contact Us</button>
+      </nav>
+    
+  </div>
+
+  <div className="header-right">
+    <button className="notification-button">
+      <div className="notification-dot"></div>
+      <span className="notification-icon">🔔</span>
+    </button>
+    <div className="auth-buttons">
+      {user ? (
+        <>
+          <button className="btn btn-primary" onClick={handleLogout}>
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <button className="btn btn-primary" onClick={() => navigate("/login")}>
+            Login
+          </button>
+          <button className="btn btn-success" onClick={() => navigate("/signup")}>
+            Sign Up
+          </button>
+        </>
+      )}
+    </div>
+  </div>
+</div>
+</header>
 
       {/* Description Section */}
       <div className="description-section">
