@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   // Check if the user has completed the signup process (Medical + Questionnaire)
@@ -38,7 +39,7 @@ function App() {
         path="/signup"
         element={isAuthenticated ? <Navigate to="/" /> : <Signup />}
       />
-
+      
       {/* First-time Signup Flow */}
       <Route
         path="/medical-form"
@@ -48,6 +49,7 @@ function App() {
         path="/questionnaire"
         element={!isFirstTimeUser ? <Questionnaire /> : <Navigate to="/" />}
       />
+       <Route path="/profile" element={<Profile />} />
 
       {/* Quick Links Routes */}
       <Route path="/about" element={<AboutUs />} />

@@ -63,22 +63,26 @@ const Home = () => {
       <span className="notification-icon">🔔</span>
     </button>
     <div className="auth-buttons">
-      {user ? (
-        <>
-          <button className="btn btn-primary" onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      ) : (
-        <>
-          <button className="btn btn-primary" onClick={() => navigate("/login")}>
-            Login
-          </button>
-          <button className="btn btn-success" onClick={() => navigate("/signup")}>
-            Sign Up
-          </button>
-        </>
-      )}
+    {user ? (
+  <>
+    <button className="btn btn-secondary" onClick={() => navigate("/profile")}>
+      Profile
+    </button>
+    <button className="btn btn-primary" onClick={handleLogout}>
+      Logout
+    </button>
+  </>
+) : (
+  <>
+    <button className="btn btn-primary" onClick={() => navigate("/login")}>
+      Login
+    </button>
+    <button className="btn btn-success" onClick={() => navigate("/signup")}>
+      Sign Up
+    </button>
+  </>
+)}
+
     </div>
   </div>
 </div>
