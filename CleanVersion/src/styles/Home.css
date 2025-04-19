@@ -535,15 +535,30 @@ body {
 
 .section-title {
   font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
-  animation: fadeIn 0.8s ease-out;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .section-text {
+  
   color: #4b5563;
-  line-height: 1.6;
-  animation: fadeIn 0.8s ease-out 0.2s backwards;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+/*NeuroRehab*/
+.brand-title{
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: textGlow 2.5s ease-in-out infinite, fadeIn 1s ease-out;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0;
 }
 
 .features-list {

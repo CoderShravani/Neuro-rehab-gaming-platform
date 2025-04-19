@@ -56,6 +56,7 @@ const Home = () => {
       <img src="/addimage/logo.png" alt="Logo" className="logo" />
     </div>
     
+    <h1 className="brand-title">NeuroRehab</h1>
 
     {/* Only show navigation if user is logged in */}
     
