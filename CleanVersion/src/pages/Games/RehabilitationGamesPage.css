@@ -1,8 +1,10 @@
 .rehab-games-container {
-    max-width: 700px;
+    max-width: 800px;
+    height: 400px;
     margin: auto;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ddd;
   }
   
   .rehab-games-container h2 {
