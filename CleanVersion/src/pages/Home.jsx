@@ -15,9 +15,14 @@ const Home = () => {
     navigate("/notifications");
   };
 
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
+  };
+
+  const handleCardClick = () => {
+    navigate("/rehabilitation-games");
   };
 
   const handleMoodClick = (index) => {
@@ -33,6 +38,8 @@ const Home = () => {
         button.classList.remove("active");
       }
     });
+
+  
   };
 
   return (
@@ -173,7 +180,7 @@ const Home = () => {
               backgroundImage: "url('/addimage/rehab-icon.png')",
             }}
           >
-            <div className="grid-content">
+            <div className="grid-content" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
               <h3 className="feature-title">Rehabilitation Focus</h3>
               <p className="feature-description">
                 Personalized exercises to aid your recovery. Our programs are
@@ -188,7 +195,7 @@ const Home = () => {
               backgroundImage: "url('/addimage/games-icon.png')",
             }}
           >
-            <div className="grid-content">
+            <div className="grid-content" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
               <h3 className="feature-title">Games</h3>
               <p className="feature-description">
                 Engaging cognitive and physical therapy games. Improve memory,
