@@ -65,7 +65,7 @@ qSnapshot.forEach((doc) => {
           <li>Progress</li>
           <li>Privacy & Security</li>
           <li>Language</li>
-          <li onClick={() => setShowMedical(!showMedical)} style={{ cursor: "pointer", color: "#007bff" }}>
+          <li onClick={() => setShowMedical(!showMedical)} style={{ cursor: "pointer" }}>
             Medical History
           </li>
           <li>ChatBot</li>
