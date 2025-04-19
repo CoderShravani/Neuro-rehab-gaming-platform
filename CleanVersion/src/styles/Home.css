@@ -952,7 +952,7 @@ body {
 }
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav-link {
@@ -968,8 +968,7 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #ffffff;
-  color: #1e1e2f;
+  background-color: rgb(212, 89, 130);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }

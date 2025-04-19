@@ -16,7 +16,14 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     setError("");
-
+  
+    // Simple password check
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      setError("Password must be at least 8 characters long and include an uppercase letter, a number, and a special character.");
+      return;
+    }
+  
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -24,26 +31,24 @@ const Signup = () => {
         password
       );
       const user = userCredential.user;
-
-      // Save user to Firestore
+  
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
         uid: user.uid,
         createdAt: new Date(),
       });
-
-      // Save user info to localStorage
+  
       localStorage.setItem("user", JSON.stringify({
         uid: user.uid,
         email: user.email,
       }));
-
-      // Navigate to medical form after signup
+  
       navigate("/medical-form");
     } catch (error) {
       setError(error.message || "Failed to create an account. Try again.");
     }
   };
+  
 
   return (
     <div className="signup-container">
