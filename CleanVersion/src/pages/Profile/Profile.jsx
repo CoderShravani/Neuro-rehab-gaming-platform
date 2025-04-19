@@ -4,6 +4,9 @@ import { auth } from "../../authentication/firebase";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../../authentication/firebase";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -11,8 +14,11 @@ const Profile = () => {
   const [showMedical, setShowMedical] = useState(false);
   const [questionnaireData, setQuestionnaireData] = useState(null);
   const [showAccount, setShowAccount] = useState(false);
+  const navigate = useNavigate();
 
-
+  const handleClick = () => {
+    navigate("/notifications");
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -65,7 +71,7 @@ qSnapshot.forEach((doc) => {
   <li onClick={() => setShowAccount(!showAccount)} style={{ cursor: "pointer" }}>
     Account
   </li>
-  <li>Notification</li>
+  <li onClick={handleClick}>Notification</li>
   <li>Progress</li>
   <li>Privacy & Security</li>
   <li>Language</li>
