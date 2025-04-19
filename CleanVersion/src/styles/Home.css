@@ -935,6 +935,30 @@ body {
 .auth-switch a:hover {
   text-decoration: underline;
 }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  background-color: rgb(214, 120, 151);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #ffffff;
+  color: #1e1e2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
 
 /* Healing Highlights Section */
 .healing-highlights {

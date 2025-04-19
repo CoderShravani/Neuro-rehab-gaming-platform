@@ -1,0 +1,17 @@
+.notification-page {
+    padding: 40px;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .notification-page h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .notification-page p {
+    font-size: 18px;
+    color: #777;
+  }
+  

@@ -11,6 +11,10 @@ const Home = () => {
   const [selectedMood, setSelectedMood] = useState(null);
   console.log("User:", user);
 
+  const handleClick = () => {
+    navigate("/notifications");
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
@@ -58,7 +62,7 @@ const Home = () => {
   </div>
 
   <div className="header-right">
-    <button className="notification-button">
+    <button className="notification-button" onClick={handleClick}>
       <div className="notification-dot"></div>
       <span className="notification-icon">🔔</span>
     </button>

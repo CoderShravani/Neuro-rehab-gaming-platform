@@ -10,6 +10,8 @@ const Profile = () => {
   const [userData, setUserData] = useState(null);
   const [showMedical, setShowMedical] = useState(false);
   const [questionnaireData, setQuestionnaireData] = useState(null);
+  const [showAccount, setShowAccount] = useState(false);
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -60,16 +62,19 @@ qSnapshot.forEach((doc) => {
         <p>{user.email}</p>
 
         <ul className="profile-options">
-          <li>Account</li>
-          <li>Notification</li>
-          <li>Progress</li>
-          <li>Privacy & Security</li>
-          <li>Language</li>
-          <li onClick={() => setShowMedical(!showMedical)} style={{ cursor: "pointer" }}>
-            Medical History
-          </li>
-          <li>ChatBot</li>
-        </ul>
+  <li onClick={() => setShowAccount(!showAccount)} style={{ cursor: "pointer" }}>
+    Account
+  </li>
+  <li>Notification</li>
+  <li>Progress</li>
+  <li>Privacy & Security</li>
+  <li>Language</li>
+  <li onClick={() => setShowMedical(!showMedical)} style={{ cursor: "pointer" }}>
+    Medical History
+  </li>
+  <li>ChatBot</li>
+</ul>
+
 
         {showMedical && (
           <div className="medical-history">
@@ -87,6 +92,18 @@ qSnapshot.forEach((doc) => {
             )}
           </div>
         )}
+
+{showAccount && (
+  <div className="account-section">
+    <h4>Account Details</h4>
+    <p><strong>Name:</strong> {userData?.fullName || "N/A"}</p>
+    <p><strong>Email:</strong> {user.email}</p>
+    <p><strong>Emergency Contact:</strong> {userData?.emergencyContact || "N/A"}</p>
+    <p><strong>Blood Type:</strong> {userData?.bloodType || "N/A"}</p>
+  </div>
+)}
+
+
       </div>
     </div>
   );
