@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../authentication/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import "../styles/Questionnaire.css"
 
 const Question = ({ label, name, options, handleChange }) => (
   <div className="mb-4">
@@ -74,13 +75,15 @@ const Questionnaire = () => {
   };
 
   return (
+    <div id="formLeft">
     <form
-      onSubmit={handleSubmit}
-      className="p-6 max-w-lg mx-auto bg-white shadow-md rounded-lg"
-    >
+    onSubmit={handleSubmit}
+    className="w-full max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-xl space-y-8"
+  >
+  
 
-      <h2 className="text-xl font-bold mb-4">General Patient Information</h2>
-      <Question
+      <h2 className="text-xl font-bold mb-4" >General Patient Information</h2>
+      <Question 
         label="1. What is your age group?"
         name="ageGroup"
         options={["18-30", "31-50", "51-65", "65+"]}
@@ -301,7 +304,9 @@ const Questionnaire = () => {
         {loading ? "Submitting..." : "Submit"}
       </button>
     </form>
+    </div>
   );
+ 
 };
 
 export default Questionnaire;

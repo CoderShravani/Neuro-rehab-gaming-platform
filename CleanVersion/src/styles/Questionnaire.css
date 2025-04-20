@@ -1,94 +1,121 @@
+/* Reset and base styles */
 body {
-    background: #f4f4f4;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Form container */
+#formLeft form {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* Headings */
+#formLeft h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb; /* Blue 600 */
+  border-bottom: 2px solid #93c5fd; /* Light blue */
+  padding-bottom: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+/* Each question block */
+.mb-4 {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Label styling */
+label.block {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+/* Options */
+.ml-4 {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  color: #374151;
+}
+
+/* Radio input */
+input[type="radio"] {
+  accent-color: #2563eb; /* Tailwind blue-600 */
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Error message */
+.text-red-500 {
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 2rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e40af; /* Darker blue */
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #formLeft form {
+    padding: 1.5rem;
   }
-  
-  .questionnaire-container {
-    width: 90%;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 25px;
-    border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  label.block {
+    font-size: 1rem;
   }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+
+  #formLeft h2 {
+    font-size: 1.25rem;
   }
-  
-  .questionnaire-form {
-    display: flex;
-    flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  #formLeft form {
+    padding: 1rem;
   }
-  
-  .questionnaire-form label {
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 15px;
-    color: #444;
-    display: block;
+
+  .ml-4 {
+    flex-direction: row;
+    align-items: flex-start;
   }
-  
-  .questionnaire-form div {
-    margin-bottom: 15px;
+
+  input[type="radio"] {
+    margin-top: 0.2rem;
   }
-  
-  .questionnaire-form input[type="radio"],
-  .questionnaire-form input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  
-  .questionnaire-form select,
-  .questionnaire-form input[type="text"],
-  .questionnaire-form input[type="email"],
-  .questionnaire-form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .questionnaire-container {
-      width: 95%;
-      padding: 20px;
-    }
-  
-    .questionnaire-form label {
-      font-size: 14px;
-    }
-  
-    .questionnaire-form input,
-    .questionnaire-form select {
-      font-size: 13px;
-    }
-  
-    button {
-      font-size: 14px;
-      padding: 10px;
-    }
-  }
-  
+}

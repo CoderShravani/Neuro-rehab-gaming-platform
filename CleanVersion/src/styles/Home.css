@@ -276,14 +276,14 @@ body {
 /* Base Styles */
 .home-container {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(
     135deg,
     rgba(246, 248, 252, 0.95) 0%,
     rgba(233, 236, 239, 0.95) 100%
   );
-  padding: 20px;
+
   position: relative;
-  backdrop-filter: blur(5px);
 }
 
 .animated-background {
@@ -536,15 +536,30 @@ body {
 
 .section-title {
   font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
-  animation: fadeIn 0.8s ease-out;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .section-text {
+  
   color: #4b5563;
-  line-height: 1.6;
-  animation: fadeIn 0.8s ease-out 0.2s backwards;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+/*NeuroRehab*/
+.brand-title{
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: textGlow 2.5s ease-in-out infinite, fadeIn 1s ease-out;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0;
 }
 
 .features-list {
@@ -951,6 +966,29 @@ body {
 .auth-switch a:hover {
   text-decoration: underline;
 }
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  background-color: rgb(214, 120, 151);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgb(212, 89, 130);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
 
 /* Healing Highlights Section */
 .healing-highlights {
@@ -1055,3 +1093,37 @@ body {
     font-size: 2rem;
   }
 }
+/*Profile button*/
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  text-align: center;
+}
+
+/* Secondary variant styling */
+.btn-secondary {
+  background-color: #6c63ff; /* Soft violet-blue */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #574fcf;
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  background-color: #463fb0;
+  transform: scale(0.98);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.4);
+}
+

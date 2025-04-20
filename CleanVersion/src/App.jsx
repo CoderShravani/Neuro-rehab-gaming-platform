@@ -9,15 +9,20 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
+<<<<<<< HEAD
 import Notifications from "./pages/Notifications/Notifications";
+=======
+import Profile from "./pages/Profile/Profile";
+import NotificationPage from "./pages/Profile/NotificationPage";
+import RehabilitationGamesPage from "./pages/Games/RehabilitationGamesPage";
+import BalloonBurst from "./Games/balloonburst"; // Updated path to match your structure
+>>>>>>> 8dc2b1f10aa4c31e1fa6855cbda0255f8c98431e
 
 function App() {
-  // Check if the user has completed the signup process (Medical + Questionnaire)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isFirstTimeUser, setIsFirstTimeUser] = useState(false);
 
   useEffect(() => {
-    // Fetch authentication status from localStorage (or backend API)
     const user = JSON.parse(localStorage.getItem("user"));
     if (user?.isAuthenticated) {
       setIsAuthenticated(true);
@@ -27,36 +32,24 @@ function App() {
 
   return (
     <Routes>
-      {/* Home should always be the default route */}
       <Route path="/" element={<Home />} />
-
-      {/* Authentication Routes */}
-      <Route
-        path="/login"
-        element={isAuthenticated ? <Navigate to="/" /> : <Login />}
-      />
-      <Route
-        path="/signup"
-        element={isAuthenticated ? <Navigate to="/" /> : <Signup />}
-      />
-
-      {/* First-time Signup Flow */}
-      <Route
-        path="/medical-form"
-        element={!isFirstTimeUser ? <MedicalForm /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/questionnaire"
-        element={!isFirstTimeUser ? <Questionnaire /> : <Navigate to="/" />}
-      />
-
-      {/* Quick Links Routes */}
+      <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
+      <Route path="/signup" element={isAuthenticated ? <Navigate to="/" /> : <Signup />} />
+      <Route path="/medical-form" element={!isFirstTimeUser ? <MedicalForm /> : <Navigate to="/" />} />
+      <Route path="/questionnaire" element={!isFirstTimeUser ? <Questionnaire /> : <Navigate to="/" />} />
+      <Route path="/notifications" element={<NotificationPage />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/services" element={<Services />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/contact" element={<Contact />} />
+<<<<<<< HEAD
       <Route path="/Notifications" element={<Notifications />} />
       <Route path="/pages/Notifications/Notifications" element={<Notifications />} />
+=======
+      <Route path="/rehabilitation-games" element={<RehabilitationGamesPage />} />
+      <Route path="/balloonburst" element={<BalloonBurst />} /> {/* ✅ New route */}
+>>>>>>> 8dc2b1f10aa4c31e1fa6855cbda0255f8c98431e
     </Routes>
   );
 }

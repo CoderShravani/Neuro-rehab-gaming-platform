@@ -14,9 +14,18 @@ const Home = () => {
 
   console.log("User:", user);
 
+  const handleClick = () => {
+    navigate("/notifications");
+  };
+
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
+  };
+
+  const handleCardClick = () => {
+    navigate("/rehabilitation-games");
   };
 
   const handleMoodClick = (index) => {
@@ -32,6 +41,8 @@ const Home = () => {
         button.classList.remove("active");
       }
     });
+
+  
   };
 
   return (
@@ -48,6 +59,7 @@ const Home = () => {
       <img src="/addimage/logo.png" alt="Logo" className="logo" />
     </div>
     
+    <h1 className="brand-title">NeuroRehab</h1>
 
     {/* Only show navigation if user is logged in */}
     
@@ -80,24 +92,35 @@ const Home = () => {
   </div>
 
   <div className="header-right">
+<<<<<<< HEAD
 
+=======
+    <button className="notification-button" onClick={handleClick}>
+      <div className="notification-dot"></div>
+      <span className="notification-icon">🔔</span>
+    </button>
+>>>>>>> 8dc2b1f10aa4c31e1fa6855cbda0255f8c98431e
     <div className="auth-buttons">
-      {user ? (
-        <>
-          <button className="btn btn-primary" onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      ) : (
-        <>
-          <button className="btn btn-primary" onClick={() => navigate("/login")}>
-            Login
-          </button>
-          <button className="btn btn-success" onClick={() => navigate("/signup")}>
-            Sign Up
-          </button>
-        </>
-      )}
+    {user ? (
+  <>
+    <button className="btn btn-secondary" onClick={() => navigate("/profile")}>
+      Profile
+    </button>
+    <button className="btn btn-primary" onClick={handleLogout}>
+      Logout
+    </button>
+  </>
+) : (
+  <>
+    <button className="btn btn-primary" onClick={() => navigate("/login")}>
+      Login
+    </button>
+    <button className="btn btn-success" onClick={() => navigate("/signup")}>
+      Sign Up
+    </button>
+  </>
+)}
+
     </div>
   </div>
 </div>
@@ -184,7 +207,7 @@ const Home = () => {
               backgroundImage: "url('/addimage/rehab-icon.png')",
             }}
           >
-            <div className="grid-content">
+            <div className="grid-content" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
               <h3 className="feature-title">Rehabilitation Focus</h3>
               <p className="feature-description">
                 Personalized exercises to aid your recovery. Our programs are
@@ -199,7 +222,7 @@ const Home = () => {
               backgroundImage: "url('/addimage/games-icon.png')",
             }}
           >
-            <div className="grid-content">
+            <div className="grid-content" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
               <h3 className="feature-title">Games</h3>
               <p className="feature-description">
                 Engaging cognitive and physical therapy games. Improve memory,
