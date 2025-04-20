@@ -1,16 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./RehabilitationGamesPage.css";
 
 const RehabilitationGamesPage = () => {
   const [openCategory, setOpenCategory] = useState(null);
+  const navigate = useNavigate();
 
   const toggleCategory = (index) => {
     setOpenCategory(openCategory === index ? null : index);
   };
 
   const handleGameClick = (gameName) => {
-    console.log(`You clicked on ${gameName}`);
-    // You can navigate, open modal, or perform any action here
+    if (gameName === "Balloon Burst") {
+      navigate("/balloonburst");
+    } else {
+      alert(`${gameName} is not available yet.`);
+    }
   };
 
   return (
@@ -25,11 +30,11 @@ const RehabilitationGamesPage = () => {
         </div>
         {openCategory === 0 && (
           <ul className="game-list">
-            <li onClick={() => handleGameClick("Balloon Burst")}>Balloon Burst</li>
-            <li onClick={() => handleGameClick("Shape Tracer")}>Shape Tracer</li>
-            <li onClick={() => handleGameClick("Memory Match")}>Memory Match</li>
-            <li onClick={() => handleGameClick("Hand-Eye Coordination Games")}>Hand-Eye Coordination Games</li>
-            <li onClick={() => handleGameClick("Focus & Recall")}>Focus & Recall</li>
+            <li><button onClick={() => handleGameClick("Balloon Burst")}>Balloon Burst</button></li>
+            <li><button onClick={() => handleGameClick("Shape Tracer")}>Shape Tracer</button></li>
+            <li><button onClick={() => handleGameClick("Memory Match")}>Memory Match</button></li>
+            <li><button onClick={() => handleGameClick("Hand-Eye Coordination Games")}>Hand-Eye Coordination Games</button></li>
+            <li><button onClick={() => handleGameClick("Focus & Recall")}>Focus & Recall</button></li>
           </ul>
         )}
       </div>
@@ -42,11 +47,11 @@ const RehabilitationGamesPage = () => {
         </div>
         {openCategory === 1 && (
           <ul className="game-list">
-            <li onClick={() => handleGameClick("Shoulder Game")}>Shoulder Game</li>
-            <li onClick={() => handleGameClick("Arm Strength Games")}>Arm Strength Games</li>
-            <li onClick={() => handleGameClick("Grip Strength Games")}>Grip Strength Games</li>
-            <li onClick={() => handleGameClick("Resistance Band Pulls")}>Resistance Band Pulls</li>
-            <li onClick={() => handleGameClick("Wall Push-Ups")}>Wall Push-Ups</li>
+            <li><button onClick={() => handleGameClick("Shoulder Game")}>Shoulder Game</button></li>
+            <li><button onClick={() => handleGameClick("Arm Strength Games")}>Arm Strength Games</button></li>
+            <li><button onClick={() => handleGameClick("Grip Strength Games")}>Grip Strength Games</button></li>
+            <li><button onClick={() => handleGameClick("Resistance Band Pulls")}>Resistance Band Pulls</button></li>
+            <li><button onClick={() => handleGameClick("Wall Push-Ups")}>Wall Push-Ups</button></li>
           </ul>
         )}
       </div>
@@ -59,11 +64,11 @@ const RehabilitationGamesPage = () => {
         </div>
         {openCategory === 2 && (
           <ul className="game-list">
-            <li onClick={() => handleGameClick("Knee Flexibility Challenge")}>Knee Flexibility Challenge</li>
-            <li onClick={() => handleGameClick("Ankle Balance Games")}>Ankle Balance Games</li>
-            <li onClick={() => handleGameClick("Leg Stretch Games")}>Leg Stretch Games</li>
-            <li onClick={() => handleGameClick("Heel Raises")}>Heel Raises</li>
-            <li onClick={() => handleGameClick("Side Leg Lifts")}>Side Leg Lifts</li>
+            <li><button onClick={() => handleGameClick("Knee Flexibility Challenge")}>Knee Flexibility Challenge</button></li>
+            <li><button onClick={() => handleGameClick("Ankle Balance Games")}>Ankle Balance Games</button></li>
+            <li><button onClick={() => handleGameClick("Leg Stretch Games")}>Leg Stretch Games</button></li>
+            <li><button onClick={() => handleGameClick("Heel Raises")}>Heel Raises</button></li>
+            <li><button onClick={() => handleGameClick("Side Leg Lifts")}>Side Leg Lifts</button></li>
           </ul>
         )}
       </div>
