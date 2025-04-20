@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
+import Notifications from "./pages/Notifications/Notifications";
 
 function App() {
   // Check if the user has completed the signup process (Medical + Questionnaire)
@@ -54,6 +55,8 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/Notifications" element={<Notifications />} />
+      <Route path="/pages/Notifications/Notifications" element={<Notifications />} />
     </Routes>
   );
 }

@@ -933,6 +933,21 @@ body {
   font-weight: 500;
 }
 
+/* Notification Nav Link Styles */
+.notification-nav-link {
+  background-color: #f0f8ff !important;
+  border: 1px solid #e1e4e8 !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: visible;
+}
+
+.notification-nav-link:hover {
+  background-color: #e6f3ff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
 .auth-switch a:hover {
   text-decoration: underline;
 }

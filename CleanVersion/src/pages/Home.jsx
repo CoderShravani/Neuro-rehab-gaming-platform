@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Home.css";
 import SuccessStories from "./Swiper/Swiper";
 import Footer from "./Footer/Footer";
+import Notifications from "./Notifications/Notifications";
 
 
 const Home = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const [selectedMood, setSelectedMood] = useState(null);
+
+
   console.log("User:", user);
 
   const handleLogout = () => {
@@ -53,15 +56,31 @@ const Home = () => {
         <button onClick={() => navigate("/services")} className="nav-link">Our Services</button>
         <button onClick={() => navigate("/programs")} className="nav-link">Treatment Programs</button>
         <button onClick={() => navigate("/contact")} className="nav-link">Contact Us</button>
+        <button 
+          onClick={() => navigate("/pages/Notifications/Notifications")} 
+          className="nav-link notification-nav-link"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '5px'
+          }}
+        >
+          <span style={{ fontSize: '20px' }}>🔔</span>
+          Notifications
+          <div style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: 'red',
+            borderRadius: '50%',
+            marginLeft: '2px'
+          }}></div>
+        </button>
       </nav>
     
   </div>
 
   <div className="header-right">
-    <button className="notification-button">
-      <div className="notification-dot"></div>
-      <span className="notification-icon">🔔</span>
-    </button>
+
     <div className="auth-buttons">
       {user ? (
         <>
