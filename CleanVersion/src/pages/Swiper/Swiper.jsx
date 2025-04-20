@@ -10,7 +10,7 @@ const testimonials = [
     condition: "TBI Patient",
     feedback:
       "Improvements in my mobility. The platform's comprehensive approach to rehabilitation has been truly transformative.",
-    rating: 5,
+    rating: 4,
   },
   {
     initials: "JD",
@@ -26,7 +26,7 @@ const testimonials = [
     condition: "Multiple Sclerosis",
     feedback:
       "The flexibility of the program allows me to maintain my therapy schedule despite my varying energy levels. The progress tracking keeps me motivated, and the community support is incredibly encouraging.",
-    rating: 5,
+    rating: 4,
   },
   {
     initials: "RK",
@@ -42,7 +42,7 @@ const testimonials = [
     condition: "Cerebral Palsy",
     feedback:
       "The adaptive exercises have helped me build strength and coordination. The progress tracking shows my improvement over time, and the virtual consultations with specialists are incredibly helpful.",
-    rating: 5,
+    rating: 4,
   },
 ];
 
